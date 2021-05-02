@@ -1,0 +1,45 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Laptop Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>
+        <th>Laptop ID</th>  
+        <th>Laptop Name</th>  
+        <th>Laptop Brand</th>  
+        <th>Processor</th> 
+        <th>Is the laptop in stock?</th>
+        <th>Price</th> 
+        <th>Picture</th>
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for lap in Laptops %}  
+    <tr> 
+        <td>{{ lap.lid }}</td>  
+        <td>{{ lap.lname }}</td>  
+        <td>{{ lap.lbrand }}</td>  
+        <td>{{ lap.lproc }}</td>  
+        <td>{{ lap.lstock }}</td>
+        <td>{{ lap.lprice }}</td>
+        <td><img src="{{ lap.picture.url }}" alt=""style="height:100px;object-fit:contain"></td>
+        <td>  
+            <a href="/update/{{ lap.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ lap.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="new" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  

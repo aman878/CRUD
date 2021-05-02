@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Update Item</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form action="/update/{{id}}" method="POST" class="post-form" enctype="multipart/form-data">  
+        {% csrf_token %}  
+        <div class="container">  
+          <br>  
+              <div class="form-group row">  
+              <label class="col-sm-1 col-form-label"></label>  
+              <div class="col-sm-4">  
+              <h3>Enter Details</h3>  
+              </div>  
+            </div>  
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Laptop Id:</label>  
+              <div class="col-sm-4">  
+                {{ form.lid }}  
+              </div>  
+            </div>  
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Laptop Name:</label>  
+              <div class="col-sm-4">  
+                {{ form.lname }}  
+              </div>  
+            </div>  
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Laptop Brand:</label>  
+              <div class="col-sm-4">  
+                {{ form.lbrand }}  
+              </div>  
+            </div>  
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Laptop Processor:</label>  
+              <div class="col-sm-4">  
+                {{ form.lproc }}  
+              </div>  
+            </div>  
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Is the laptop in stock?</label>  
+              <div class="col-sm-4">  
+                {{ form.lstock }}  
+              </div>  
+            </div>
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Price</label>  
+              <div class="col-sm-4">  
+                {{ form.lprice }}  
+              </div>  
+            </div>    
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Laptop Picture:</label>  
+              <div class="col-sm-4">  
+                {{ form.picture }}  
+              </div>  
+            </div>  
+            </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
